@@ -1,6 +1,5 @@
 package com.example.tuantx.kotlinmvp.view
 
-import android.view.View
 import com.example.tuantx.kotlinmvp.model.Post
 
 /**

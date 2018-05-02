@@ -1,6 +1,5 @@
 package com.example.tuantx.kotlinmvp.model
 
-import com.example.tuantx.kotlinmvp.model.Post
 import io.reactivex.Observable
 import retrofit2.http.GET
 

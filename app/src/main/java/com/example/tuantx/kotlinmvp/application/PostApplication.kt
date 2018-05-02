@@ -18,8 +18,11 @@ class PostApplication : Application() {
     }
 
 
-     fun createPostComponent(): PostComponent {
-        return DaggerPostComponent.builder().postModule(PostModule()).build()
+    companion object {
+        fun createPostComponent(): PostComponent {
+            return DaggerPostComponent.builder().postModule(PostModule()).build()
+        }
     }
+
 
 }

@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.example.tuantx.kotlinmvp.R
 import com.example.tuantx.kotlinmvp.adapter.PostAdapter
 import com.example.tuantx.kotlinmvp.application.PostApplication
-import com.example.tuantx.kotlinmvp.model.ApiService
+import com.example.tuantx.kotlinmvp.model.ApiInterfaces
 import com.example.tuantx.kotlinmvp.model.Post
 import com.example.tuantx.kotlinmvp.presenter.PostPresenter
 import com.example.tuantx.kotlinmvp.view.PostContract
@@ -16,13 +16,17 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity(), PostContract {
 
     @Inject
-    var apiService = ApiService()
-    var postPresenter = PostPresenter(this, apiService)
+    lateinit var apiInterfaces: ApiInterfaces
+
+    lateinit var postPresenter: PostPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        (application as PostApplication).createPostComponent().inject(this)
+
+        PostApplication.createPostComponent().inject(this)
+
+        this.postPresenter = PostPresenter(this, apiInterfaces)
 
         postPresenter.showListPost()
         rv_post?.setHasFixedSize(true)

@@ -13,8 +13,8 @@ import javax.inject.Singleton
  */
 @Module
 class PostModule {
-    private var retrofit: Retrofit? = null
-    private val baseURL = "https://jsonplaceholder.typicode.com/"
+    var retrofit: Retrofit? = null
+    val baseURL = "https://jsonplaceholder.typicode.com/"
 
     @Singleton
     @Provides
