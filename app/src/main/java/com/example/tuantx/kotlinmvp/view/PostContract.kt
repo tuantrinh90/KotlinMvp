@@ -7,5 +7,4 @@ import com.example.tuantx.kotlinmvp.model.Post
  */
 interface PostContract {
     fun showListPost(list: List<Post>)
-
 }

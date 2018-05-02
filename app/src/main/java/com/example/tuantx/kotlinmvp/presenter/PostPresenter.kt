@@ -25,7 +25,7 @@ class PostPresenter {
         compositeDisposable!!.add(apiInterfaces!!.getPost()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { listPost: List<Post> -> postContract?.showListPost(listPost) })
+                .subscribe { listPost: List<Post> -> postContract?.showListPost(listPost)})
     }
 
     fun unSubScribe() {
