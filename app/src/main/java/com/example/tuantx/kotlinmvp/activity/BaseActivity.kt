@@ -17,6 +17,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
 
+        //Todo comment
         PostApplication.createPostComponent().inject(this)
 
     }
