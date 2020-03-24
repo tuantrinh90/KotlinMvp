@@ -25,4 +25,5 @@ class PostAdapter(var context: Context, var listPost: List<Post>) : RecyclerView
         holder.txtContent.text = listPost[position].body
     }
 
+
 }

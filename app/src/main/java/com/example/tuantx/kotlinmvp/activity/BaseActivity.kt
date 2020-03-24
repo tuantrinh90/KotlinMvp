@@ -18,6 +18,7 @@ abstract class BaseActivity : AppCompatActivity() {
         setContentView(getLayoutId())
 
         PostApplication.createPostComponent().inject(this)
+
     }
 
     abstract fun getLayoutId(): Int
